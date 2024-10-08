@@ -1,3 +1,27 @@
-export default function aboutme() {
-  return(<div>Hello World</div>);
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+export default function AboutMe() {
+  return (
+    <div>
+        Hello world!
+        <Card>
+            <CardHeader>
+                <CardTitle>
+                    Hello I am Jessica
+                </CardTitle>
+                <CardDescription>
+                    I do not like to sleep lots
+                </CardDescription>
+            </CardHeader>
+            <CardContent>
+                <div className="flex flex-row gap-2">
+                    <p className="font-bold">Name:</p>
+                    Jessica
+                </div>
+                <div className="flex flex-row gap-2"><p className="font-bold">Major:</p>Information Systems</div>
+                <div className="flex flex-row gap-2"><p className="font-bold">Hobbies:</p>I like to draw</div>
+            </CardContent>
+        </Card>
+    </div>
+  );
 }
