@@ -128,7 +128,7 @@ export default function Quiz() {
                 	name="question3"
                 	render={({ field }) => (
                     	<FormItem>
-                        	<FormLabel>Question 3:</FormLabel>
+                        	<FormLabel>Question 4:</FormLabel>
                         	<FormDescription>WILL U DO DRUGS?</FormDescription>
                         	<Select onValueChange={field.onChange} defaultValue={field.value}>
                             	<FormControl>
