@@ -9,8 +9,9 @@ export default function AboutMe() {
                 <CardTitle>
                     Hello I am Jessica
                 </CardTitle>
+                <img src="https://i.pinimg.com/originals/f2/f0/e0/f2f0e067ce9b8de1cdd98c9ee9605b55.png" className="w-48 h-auto rounded-lg mb-2" />
                 <CardDescription>
-                    I do not like to sleep lots
+                    I like to sleep lots
                 </CardDescription>
             </CardHeader>
             <CardContent>
