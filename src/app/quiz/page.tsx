@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { insertOneUser } from "../server/user";
 
 const FormSchema = z.object({
 	name: z.string({
@@ -22,10 +23,10 @@ const FormSchema = z.object({
 	}),
 
   question2: z.string({
-    required_error:"Please enter something"
+    required_error:"Please select an option"
   }),
   question3: z.string({
-    required_error:"enter something"
+    required_error:"Please select an option"
 
   })
 })
@@ -38,30 +39,32 @@ export default function Quiz() {
 	})
 
 	function onSubmit(data: z.infer<typeof FormSchema>) {
-    let count=0;
+    let count=3;
     if (data.question1 === "yes") {
-      count +=1
+      count -=1
     }
     if (data.question2 === "no") {
-      count +=1
+      count -=1
     }
     if (data.question3 === "no") {
-      count +=1
+      count -=1
     }
   
-    if (count == 3) {
+    if (count == 0) {
         toast({
-            title: `Congratulations ${data.name}`,
+            title: `Congratulations ${data.name} ${count}`,
             description: "You are right",
         })
     } else {
         toast({
-            title: `Booohooooooooo ${data.name}`,
+            title: `Booohooooooooo ${data.name} ${count}`,
             description: "You are wrong",
-        })
-    }
+        });   
+    }    
+    const iscorrect = count == 0 ? true : false;
+    insertOneUser(data.name,iscorrect);   
 }
-
+ 
 	return (
     	<Form {...form}>
         	<form onSubmit={form.handleSubmit(onSubmit)} className="w2/3 space-y-6">
