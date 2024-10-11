@@ -81,15 +81,15 @@ export default function Home() {
 <br></br>
 <div className= "flex flex-row justify-center">
 <div className="bg-white rounded-lg shadow-md p-4 max-w-xl text-center mb-4">
-  <h3 className="text-gray-700">Get Help</h3>
+  <h3 className="text-gray-700 font-bold">Get Help</h3>
   <p className="text-gray-700">
     If you or someone you know is struggling with substance use, it's important to seek help. Reach out to a trusted friend, family member, or a professional.
   </p>
   <h4 className="font-bold text-lg mb-2 text-gray-700">Resources:</h4>
 <ul className="list-disc list-inside text-gray-600">
-  <li><a href="#" className="text-blue-500 hover:underline">National Helpline</a></li>
-  <li><a href="#" className="text-blue-500 hover:underline">Support Groups</a></li>
-  <li><a href="#" className="text-blue-500 hover:underline">Educational Resources</a></li>
+  <li><a href="https://www.sana.org.sg/">National Helpline</a></li>
+  <li><a href="https://www.wecare.org.sg/services-recovery-support-groups.php" className="text-blue-500 hover:underline">Support Groups</a></li>
+  <li><a href="https://www.drugfreeworld.org/course/" className="text-blue-500 hover:underline">Educational Resources</a></li>
 </ul>
 </div>
 </div>
