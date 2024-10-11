@@ -67,7 +67,7 @@ export default function Quiz() {
   }
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-lg relative">
+    <div className="max-w-xl mx-auto p-6 bg-gray rounded-lg shadow-lg relative">
       {showConfetti && <Confetti />}
       {showSadAnimation && (
         <div className="sad-animation">😢</div> // Sad face emoji
