@@ -20,7 +20,7 @@ export default function AboutMe() {
                     Jessica
                 </div>
                 <div className="flex flex-row gap-2"><p className="font-bold">Major:</p>Information Systems</div>
-                <div className="flex flex-row gap-2"><p className="font-bold">Hobbies:</p>I like to capyyyy</div>
+                <div className="flex flex-row gap-2"><p className="font-bold">Hobbies:</p>I like capyyyy</div>
             </CardContent>
         </Card>
     </div>
