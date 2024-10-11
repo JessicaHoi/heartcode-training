@@ -52,12 +52,12 @@ export default function Quiz() {
   
     if (count == 0) {
         toast({
-            title: `Congratulations ${data.name} ${count}`,
+            title: `Congratulations ${data.name}`,
             description: "You are right",
         })
     } else {
         toast({
-            title: `Booohooooooooo ${data.name} ${count}`,
+            title: `Booohooooooooo ${data.name}`,
             description: "You are wrong",
         });   
     }    
