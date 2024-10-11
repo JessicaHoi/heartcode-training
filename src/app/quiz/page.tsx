@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -31,6 +31,7 @@ export default function Quiz() {
     resolver: zodResolver(FormSchema),
   });
   const [showConfetti, setShowConfetti] = useState(false);
+  const [showSadAnimation, setShowSadAnimation] = useState(false);
 
   useEffect(() => {
     if (showConfetti) {
@@ -51,11 +52,14 @@ export default function Quiz() {
         description: "You are right",
       });
       setShowConfetti(true); // Show confetti
+      setShowSadAnimation(false); // Hide sad animation if it was shown
     } else {
       toast({
         title: `Boohoo ${data.name}!`,
         description: "You are wrong",
       });
+      setShowSadAnimation(true); // Show sad animation
+      const timer = setTimeout(() => setShowSadAnimation(false), 1000); // Hide after 1 second
     }
 
     const isCorrect = count === 0;
@@ -65,6 +69,9 @@ export default function Quiz() {
   return (
     <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-lg relative">
       {showConfetti && <Confetti />}
+      {showSadAnimation && (
+        <div className="sad-animation">😢</div> // Sad face emoji
+      )}
       <h2 className="text-2xl font-bold text-center mb-4">Quiz Time!</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

@@ -67,3 +67,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+.sad-animation {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem; /* Adjust size as needed */
+  animation: shake 0.5s ease-in-out forwards;
+}
+
+@keyframes shake {
+  0% { transform: translate(-50%, -50%); }
+  25% { transform: translate(-55%, -55%); }
+  50% { transform: translate(-45%, -45%); }
+  75% { transform: translate(-55%, -45%); }
+  100% { transform: translate(-50%, -50%); }
+}
