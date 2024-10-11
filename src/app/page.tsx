@@ -51,12 +51,16 @@
 // );
 // }
 
-
+"use client"
 import { FlipWords } from "@/components/ui/flip-words";
-
+import { useState } from "react";
 export default function Home() {
   const words: string[] = ["UnSLAYY", "NOT SKIBIDI","PAINN","BADDD"];
+  const [showResources, setShowResources] = useState(false);
 
+  const toggleResources = () => {
+    setShowResources(!showResources);
+  };
   return (
 	<div>
   	<div className="flex flex-col h-[calc(100vh-60px)] items-center justify-center">
@@ -85,12 +89,22 @@ export default function Home() {
   <p className="text-gray-700">
     If you or someone you know is struggling with substance use, it's important to seek help. Reach out to a trusted friend, family member, or a professional.
   </p>
-  <h4 className="font-bold text-lg mb-2 text-gray-700">Resources:</h4>
-<ul className="list-disc list-inside text-gray-600">
-  <li><a href="https://www.sana.org.sg/">National Helpline</a></li>
-  <li><a href="https://www.wecare.org.sg/services-recovery-support-groups.php" className="text-blue-500 hover:underline">Support Groups</a></li>
-  <li><a href="https://www.drugfreeworld.org/course/" className="text-blue-500 hover:underline">Educational Resources</a></li>
-</ul>
+  <button
+            onClick={toggleResources}
+            className="mt-2 p-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300"
+          >
+            {showResources ? "Hide Resources" : "Show Resources"}
+          </button>
+          {showResources && (
+            <div className="mt-4 text-left">
+              <h4 className="font-bold text-lg mb-2 text-gray-700">Resources:</h4>
+              <ul className="list-disc list-inside text-gray-600">
+                <li><a href="https://www.sana.org.sg/" className="text-blue-500 hover:underline">National Helpline</a></li>
+                <li><a href="https://www.wecare.org.sg/services-recovery-support-groups.php" className="text-blue-500 hover:underline">Support Groups</a></li>
+                <li><a href="https://www.drugfreeworld.org/course/" className="text-blue-500 hover:underline">Educational Resources</a></li>
+              </ul>
+            </div>
+          )}
 </div>
 </div>
 	</div>
